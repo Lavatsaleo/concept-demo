@@ -40,7 +40,7 @@ export default function App() {
 				</Grid>
 				<Grid item xs={4}>
 					<Card variant="outlined">
-						<ColumnChart8 />
+						{/* <ColumnChart8 /> */}
 					</Card>
 				</Grid>
 			</Grid>
