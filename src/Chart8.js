@@ -1,60 +1,93 @@
 import React from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
+import HighchartsMore from "highcharts/highcharts-more";
 
+// Initialize the highcharts-more module
+HighchartsMore(Highcharts);
 
-ChartJS.register(ArcElement, Tooltip, Legend);
-
-export const data = {
-	labels: ["Case on Hold", "Submitted", "In Production", "Shipped"],
-	datasets: [
-		{
-			label: "# of Votes",
-			data: [12, 19, 3, 5],
-			backgroundColor: ["#F2CC59", "#BA68C8", "#407BFF", "#E6E5E6"],
-			borderColor: ["#F2CC59", "#BA68C8", "#407BFF", "#E6E5E6"],
-			borderWidth: 1,
+const ColumnChart8 = () => {
+	const options = {
+		chart: {
+			type: "solidgauge",
 		},
-	],
-};
 
-const pieOptions = {
-	plugins: {
-		legend: {
-			display: false,
+		title: null,
+
+		pane: {
+			center: ["50%", "85%"],
+			size: "140%",
+			startAngle: -90,
+			endAngle: 90,
+			background: {
+				backgroundColor: Highcharts.defaultOptions.legend.backgroundColor || "#EEE",
+				innerRadius: "60%",
+				outerRadius: "100%",
+				shape: "arc",
+			},
+		},
+
+		exporting: {
+			enabled: false,
+		},
+
+		tooltip: {
+			enabled: false,
+		},
+
+		// the value axis
+		yAxis: {
+			min: 0,
+			max: 200,
+			
+			stops: [
+				[0.1, "#55BF3B"], // green
+				[0.5, "#DDDF0D"], // yellow
+				[0.9, "#DF5353"], // red
+			],
+			lineWidth: 0,
+			tickWidth: 0,
+			minorTickInterval: null,
+			tickAmount: 2,
+			title: {
+				y: -70,
+			},
 			labels: {
-				font: {
-					size: 12,
+				y: 16,
+			},
+		},
+
+		plotOptions: {
+			solidgauge: {
+				dataLabels: {
+					y: 5,
+					borderWidth: 0,
+					useHTML: true,
 				},
 			},
 		},
-	},
-};
-const ColumnChart8 = () => {
-	const [charView, setChatView] = useState < any > [];
-	const summaryRef: any = useRef(null);
 
-	useEffect(() => {
-		setChatView(summaryRef?.current?.legend?.legendItems);
-	}, []);
+		series: [
+			{
+				name: "Speed",
+				data: [80],
+				dataLabels: {
+					format:
+						'<div style="text-align:center">' +
+						'<span style="font-size:25px">{y}</span><br/>' +
+						'<span style="font-size:12px;opacity:0.4">km/h</span>' +
+						"</div>",
+				},
+				tooltip: {
+					valueSuffix: " km/h",
+				},
+			},
+		],
+	};
 
 	return (
 		<div>
-			<Pie data={data} options={pieOptions} ref={summaryRef} />
-			{charView?.map((data: any, i: number) => (
-				<Box display="flex" sx={{ mt: 2 }} key={i}>
-					<Box
-						sx={{
-							height: 16,
-							width: 16,
-							background: `${data?.fillStyle}`,
-							borderRadius: 5,
-							mr: 0.5,
-						}}
-					/>
-					<Typography variant="body2"> {data?.text}</Typography>
-				</Box>
-			))}
+			<HighchartsReact highcharts={Highcharts} options={options} />
 		</div>
 	);
 };
