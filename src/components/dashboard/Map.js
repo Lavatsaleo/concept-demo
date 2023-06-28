@@ -1,8 +1,6 @@
-import './Map.css';
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import highchartsMap from "highcharts/modules/map";
-import proj4 from "proj4";
 import mapDataIE from "@highcharts/map-collection/countries/ke/ke-all.geo.json";
 
 highchartsMap(Highcharts);
@@ -85,6 +83,11 @@ const DemoMap = () =>{
 			},
 		],
 	};
-return <HighchartsReact constructorType={"mapChart"} highcharts={Highcharts} options={mapOptions} />;
+return (
+	<div>
+		<HighchartsReact constructorType={"mapChart"} highcharts={Highcharts} options={mapOptions} />
+		<h2>Description goes here</h2>
+	</div>
+);
 }
 export default DemoMap;
