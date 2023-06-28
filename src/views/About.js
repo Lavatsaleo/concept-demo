@@ -8,7 +8,7 @@ const About = () => {
       <Col>
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-0">
-            Page2
+            Home Page
           </CardTitle>
 
         </Card>

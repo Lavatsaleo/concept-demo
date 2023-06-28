@@ -1,34 +1,34 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  Navbar,
-  Collapse,
-  Nav,
-  NavItem,
-  NavbarBrand,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  Dropdown,
-  Button,
+	Navbar,
+	Collapse,
+	Nav,
+	NavItem,
+	NavbarBrand,
+	UncontrolledDropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem,
+	Dropdown,
+	Button,
 } from "reactstrap";
 import { ReactComponent as LogoWhite } from "../assets/images/logos/xtremelogowhite.svg";
 import user1 from "../assets/images/users/user1.jpg";
 import logo from "../assets/images/logos/logo.png";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+	const [isOpen, setIsOpen] = React.useState(false);
+	const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-  const Handletoggle = () => {
-    setIsOpen(!isOpen);
-  };
-  const showMobilemenu = () => {
-    document.getElementById("sidebarArea").classList.toggle("showSidebar");
-  };
-  return (
+	const toggle = () => setDropdownOpen((prevState) => !prevState);
+	const Handletoggle = () => {
+		setIsOpen(!isOpen);
+	};
+	const showMobilemenu = () => {
+		document.getElementById("sidebarArea").classList.toggle("showSidebar");
+	};
+	return (
 		<Navbar color="primary" dark expand="md">
 			<Collapse navbar isOpen={isOpen}>
 				<Nav className="me-auto" navbar>
@@ -43,11 +43,21 @@ const Header = () => {
 						</Link>
 					</NavItem>
 					<NavItem>
-						<Link to="/page2" className="nav-link">
-							Page2
+						<Link to="/mortality-dash" className="nav-link">
+							Mortality Dashboards
 						</Link>
 					</NavItem>
-					<UncontrolledDropdown inNavbar nav>
+					<NavItem>
+						<Link to="/afi" className="nav-link">
+							AFI Dashboards
+						</Link>
+					</NavItem>
+					<NavItem>
+						<Link to="/sari" className="nav-link">
+							SARI/ILI Dashboards
+						</Link>
+					</NavItem>
+					{/* <UncontrolledDropdown inNavbar nav>
 						<DropdownToggle caret nav>
 							DD Menu
 						</DropdownToggle>
@@ -57,7 +67,7 @@ const Header = () => {
 							<DropdownItem divider />
 							<DropdownItem>Reset</DropdownItem>
 						</DropdownMenu>
-					</UncontrolledDropdown>
+					</UncontrolledDropdown> */}
 				</Nav>
 				{/* <Dropdown isOpen={dropdownOpen} toggle={toggle}>
 					<DropdownToggle color="primary">
@@ -73,7 +83,7 @@ const Header = () => {
 				</Dropdown> */}
 			</Collapse>
 		</Navbar>
-  );
+	);
 };
 
 export default Header;

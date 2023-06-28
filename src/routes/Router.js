@@ -12,16 +12,18 @@ const Alerts = lazy(() => import("../views/ui/Alerts"));
 /*****Routes******/
 
 const ThemeRoutes = [
-  {
-    path: "/",
-    element: <FullLayout />,
-    children: [
-      // { path: "/", element: <Navigate /> },
-      { path: "/", exact: true, element: <Starter /> },
-      { path: "/page2", exact: true, element: <About /> },
-      { path: "/page3", exact: true, element: <Alerts /> },
-    ],
-  },
+	{
+		path: "/",
+		element: <FullLayout />,
+		children: [
+			// { path: "/", element: <Navigate /> },
+			{ path: "/", exact: true, element: <About /> },
+			{ path: "/sari", exact: true, element: <About /> },
+			{ path: "/afi", exact: true, element: <About /> },
+			{ path: "/mortality-dash", exact: true, element: <Starter /> },
+			{ path: "/page3", exact: true, element: <Alerts /> },
+		],
+	},
 ];
 
 export default ThemeRoutes;

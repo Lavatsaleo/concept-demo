@@ -75,7 +75,7 @@ const Starter = () => {
 							toggle("1");
 						}}
 					>
-						Surveillance 1
+						Overview
 					</NavLink>
 				</NavItem>
 				<NavItem>
