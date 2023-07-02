@@ -1,17 +1,16 @@
 import { Card, CardBody } from "reactstrap";
+import "./card.css";
 
 const TopCards = (props) => {
   return (
-		<Card>
-			<CardBody style={{ height: "115px" }}>
-				<div className="d-flex">
-					<div className=" text-center" style={{ margin: "auto" }}>
-						<h3 className="mb-0 font-weight-bold">{props.earning}</h3>
-						<small className="text-muted text-center">{props.subtitle}</small>
-					</div>
-				</div>
-			</CardBody>
-		</Card>
+		<div class="card-1">
+			<div class="title">
+				<p class="title-text">{props.subtitle}</p>
+			</div>
+			<div class="data">
+				<p>{props.earning.toLocaleString()}</p>
+			</div>
+		</div>
   );
 };
 

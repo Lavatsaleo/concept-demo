@@ -11,7 +11,7 @@ const Gauge = (props) => {
 				enabled: true,
 			},
 		},
-		colors: ["red"],
+		// colors: ["red"],
 		plotOptions: {
 			radialBar: {
 				startAngle: -90,
@@ -34,23 +34,23 @@ const Gauge = (props) => {
 		},
 		fill: {
 			type: "gradient",
-			colors: ["red"],
-			solid: {
+			gradient: {
 				shade: "light",
-				shadeIntensity: 0,
+				shadeIntensity: 0.4,
 				inverseColors: false,
 				opacityFrom: 1,
 				opacityTo: 1,
+				stops: [0, 50, 53, 91],
 			},
 		},
 		labels: [""],
 	};
 	let series = [parseInt((props.value1 * 100) / props.value2)];
 	return (
-		<Card>
-			<CardBody>
+		<Card class='card-1'>
+			<CardBody >
 				<div className="">
-					<Chart options={options} series={series} type="radialBar" height={"140px"} style={{marginBottom: "0px"}} />
+					<Chart options={options} series={series} type="radialBar" height={"200px"} style={{marginBottom: "0px"}} />
 				</div>
 			</CardBody>
 			<small className="text-center">{props.subtitle}</small>
