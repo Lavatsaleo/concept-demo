@@ -86,7 +86,8 @@ const DemoMap = () =>{
 return (
 	<div>
 		<HighchartsReact constructorType={"mapChart"} highcharts={Highcharts} options={mapOptions} />
-		<h2>Description goes here</h2>
+		<br/>
+		<h2 className="text-center">Mortality surveillance will be conducted at 10 facilities across Kenya</h2>
 	</div>
 );
 }

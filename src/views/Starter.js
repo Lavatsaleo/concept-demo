@@ -25,27 +25,47 @@ const Starter = () => {
 	return (
 		<div>
 			<Row>
-				<Col sm="6" lg="4">
+				<Col>
 					<Filter
 						data={[
 							{ value: "facility A", label: "facility A" },
 							{ value: "facility B", label: "facility B" },
 							{ value: "facility C", label: "facility C" },
 						]}
-						holder={'facilities'}
+						holder={"facilities"}
 					/>
 				</Col>
-				<Col sm="6" lg="4">
+				<Col>
 					<Filter
 						data={[
 							{ value: "county A", label: "county A" },
 							{ value: "county B", label: "county B" },
 							{ value: "county C", label: "county C" },
 						]}
-						holder={'counties'}
+						holder={"counties"}
 					/>
 				</Col>
-				<Col sm="6" lg="4">
+				<Col>
+					<Filter
+						data={[
+							{ value: "male", label: "male" },
+							{ value: "female", label: "female" },
+						]}
+						holder={"gender"}
+					/>
+				</Col>
+				<Col>
+					<Filter
+						data={[
+							{ value: "0-4 yrs", label: "0-4 yrs" },
+							{ value: "5-9 yrs", label: "5-9 yrs" },
+							{ value: "15-34 yrs", label: "15-34 yrs" },
+							{ value: "35-55 yrs", label: "35-55 yrs" },
+						]}
+						holder={"age group"}
+					/>
+				</Col>
+				<Col>
 					<DateFilter />
 				</Col>
 			</Row>
@@ -102,7 +122,7 @@ const Starter = () => {
 			<TabContent activeTab={currentActiveTab}>
 				<TabPane tabId="1">
 					{/***Top Cards***/}
-					<div>
+					<div className="my-3">
 						<h3 className="mb-0 font-weight-bold text-center">Screening</h3>
 						<Row>
 							<Col sm="6" lg="4">
@@ -141,8 +161,7 @@ const Starter = () => {
 						</Row>
 					</div>
 				</TabPane>
-				<TabPane tabId="2">
-					<h3 className="mb-0 font-weight-bold text-center">Mortality Dashboards</h3>
+				<TabPane className="my-3" tabId="2">
 					<Row>
 						<Col sm="6">
 							<Card variant="outlined">
@@ -156,8 +175,7 @@ const Starter = () => {
 						</Col>
 					</Row>
 				</TabPane>
-				<TabPane tabId="3">
-					<h3 className="mb-0 font-weight-bold text-center">Participants Characteristics</h3>
+				<TabPane className="my-3" tabId="3">
 					<Row>
 						<Col sm="4">
 							<Card variant="outlined">
@@ -176,8 +194,7 @@ const Starter = () => {
 						</Col>
 					</Row>
 				</TabPane>
-				<TabPane tabId="4">
-					<h3 className="mb-0 font-weight-bold text-center">COVID-19 Results</h3>
+				<TabPane className="my-3" tabId="4">
 					<Row>
 						<Col sm="4">
 							<Card variant="outlined">
