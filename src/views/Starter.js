@@ -13,6 +13,7 @@ import PieChart2 from './../components/dashboard/Chart6';
 import ColumnChart7 from './../components/dashboard/Chart7';
 import Filter from "../components/dashboard/Filters";
 import DateFilter from "../components/dashboard/DateFilter";
+import Overview from "../components/dashboard/Blog";
 
 const Starter = () => {
 	// State for current active Tab
@@ -123,6 +124,7 @@ const Starter = () => {
 				<TabPane tabId="1">
 					{/***Top Cards***/}
 					<div className="my-3">
+						<Overview />
 						<h3 className="mb-0 font-weight-bold text-center">Screening</h3>
 						<Row>
 							<Col sm="6" lg="4">

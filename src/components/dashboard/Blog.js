@@ -8,18 +8,28 @@ import {
   Button,
 } from "reactstrap";
 
-const Blog = (props) => {
+const Overview = (props) => {
   return (
-    <Card>
-      <CardImg alt="Card image cap" src={props.image} />
-      <CardBody className="p-4">
-        <CardTitle tag="h5">{props.title}</CardTitle>
-        <CardSubtitle>{props.subtitle}</CardSubtitle>
-        <CardText className="mt-3">{props.text}</CardText>
-        <Button color={props.color}>Read More</Button>
-      </CardBody>
-    </Card>
+		<Card>
+			<CardBody className="px-4">
+				<CardTitle tag="h6">Overview</CardTitle>
+				<CardText className="mt-3">
+					Mortality surveillance offers a unique opportunity to characterize the extent of undiagnosed SARS
+					COV-2 infections as well as to ensure the identification of more lethal strains of the virus to
+					better inform public health prevention and control policy.
+				</CardText>
+				<CardTitle tag="h6">Objectives</CardTitle>
+				<CardText>
+					<ul>
+						<li>Monitor the evolution of the SARS-COV-2 virus in order to help identify viral strains 
+              associated with increased mortality.</li>
+            <li>Document the prevalence of missed SARS-COV-2 infection among those that die in hospital 
+              with flu-like symptoms.</li>
+					</ul>
+				</CardText>
+			</CardBody>
+		</Card>
   );
 };
 
-export default Blog;
+export default Overview;
