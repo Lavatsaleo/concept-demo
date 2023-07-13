@@ -5,6 +5,7 @@ import highchartsMap from "highcharts/modules/map";
 import mapDataIE from "@highcharts/map-collection/countries/ke/ke-all.geo.json";
 import { useState } from "react";
 import classnames from "classnames";
+import map from "./ke-county.json"
 
 highchartsMap(Highcharts);
 
@@ -20,135 +21,135 @@ const DemoMap = () => {
 	let result = [
 		{
 			County: "HOMA BAY",
-			txCurr: 127469,
+			no: 127469,
 		},
 		{
 			County: "SIAYA",
-			txCurr: 102404,
+			no: 102404,
 		},
 		{
 			County: "NAIROBI",
-			txCurr: 159445,
+			no: 159445,
 		},
 		{
 			County: "KISUMU",
-			txCurr: 110675,
+			no: 110675,
 		},
 		{
 			County: "NAKURU",
-			txCurr: 42958,
+			no: 42958,
 		},
 		{
 			County: "MIGORI",
-			txCurr: 68621,
+			no: 68621,
 		},
 		{
 			County: "KIAMBU",
-			txCurr: 41884,
+			no: 41884,
 		},
 		{
 			County: "MERU",
-			txCurr: 20112,
+			no: 20112,
 		},
 		{
 			County: "TRANS NZOIA",
-			txCurr: 16732,
+			no: 16732,
 		},
 		{
 			County: "KWALE",
-			txCurr: 12036,
+			no: 12036,
 		},
 		{
 			County: "NAROK",
-			txCurr: 10583,
+			no: 10583,
 		},
 		{
 			County: "NYERI",
-			txCurr: 18966,
+			no: 18966,
 		},
 		{
 			County: "NANDI",
-			txCurr: 11744,
+			no: 11744,
 		},
 		{
 			County: "NYAMIRA",
-			txCurr: 11340,
+			no: 11340,
 		},
 		{
 			County: "MURANG'A",
-			txCurr: 17234,
+			no: 17234,
 		},
 		{
 			County: "UASIN GISHU",
-			txCurr: 29273,
+			no: 29273,
 		},
 		{
 			County: "BOMET",
-			txCurr: 9553,
+			no: 9553,
 		},
 		{
 			County: "KAJIADO",
-			txCurr: 16074,
+			no: 16074,
 		},
 		{
 			County: "TAITA TAVETA",
-			txCurr: 6340,
+			no: 6340,
 		},
 		{
 			County: "EMBU",
-			txCurr: 10430,
+			no: 10430,
 		},
 		{
 			County: "KIRINYAGA",
-			txCurr: 10909,
+			no: 10909,
 		},
 		{
 			County: "NYANDARUA",
-			txCurr: 9857,
+			no: 9857,
 		},
 		{
 			County: "Laikipia",
-			txCurr: 9456,
+			no: 9456,
 		},
 		{
 			County: "VIHIGA",
-			txCurr: 12424,
+			no: 12424,
 		},
 		{
 			County: "TURKANA",
-			txCurr: 4835,
+			no: 4835,
 		},
 		{
 			County: "KERICHO",
-			txCurr: 13380,
+			no: 13380,
 		},
 		{
 			County: "BARINGO",
-			txCurr: 5540,
+			no: 5540,
 		},
 		{
 			County: "THARAKA-NITHI",
-			txCurr: 7070,
+			no: 7070,
 		},
 		{
 			County: "ELGEYO MARAKWET",
-			txCurr: 3509,
+			no: 3509,
 		},
 		{
 			County: "WEST POKOT",
-			txCurr: 3266,
+			no: 3266,
 		},
 		{
 			County: "SAMBURU",
-			txCurr: 1812,
+			no: 1812,
 		},
 		{
 			County: "Tharaka- Nithi",
-			txCurr: 74,
+			no: 74,
 		},
 		{
 			County: "",
-			txCurr: 24,
+			no: 24,
 		},
 	];
 	let mappedCounties = [
@@ -213,7 +214,7 @@ const DemoMap = () => {
 			if (mappedCounty === resultCounty) {
 				data.push({
 					id: mappedCounties[j].id,
-					value: result[i].txCurr === null ? 0 : result[i].txCurr,
+					value: result[i].no === null ? 0 : result[i].no,
 				});
 				continue;
 			}
@@ -297,7 +298,7 @@ const DemoMap = () => {
 		],
 	};
 	const mapOptions2 = {
-		chart: { map: "countries/ke/ke-all" },
+		chart: { map:  map},
 		title: { text: "" },
 		colors: ["#F5542D", "#F17B25", "#F7DB00", "#8CC63F", "#009245"],
 		colorAxis: {
@@ -368,7 +369,7 @@ const DemoMap = () => {
 				</TabPane>
 				<TabPane tabId="2">
 					<br />
-					{/* <HighchartsReact constructorType={"mapChart"} highcharts={Highcharts} options={mapOptions2} /> */}
+					<HighchartsReact constructorType={"mapChart"} highcharts={Highcharts} options={mapOptions2} />
 				</TabPane>
 			</TabContent>
 			<br />
