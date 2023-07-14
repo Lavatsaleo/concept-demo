@@ -26,7 +26,7 @@ const Starter = () => {
 	return (
 		<div>
 			<Row>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "facility A", label: "facility A" },
@@ -36,7 +36,7 @@ const Starter = () => {
 						holder={"facilities"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "county A", label: "county A" },
@@ -46,7 +46,7 @@ const Starter = () => {
 						holder={"counties"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "male", label: "male" },
@@ -55,7 +55,7 @@ const Starter = () => {
 						holder={"gender"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "0-4 yrs", label: "0-4 yrs" },
@@ -66,7 +66,7 @@ const Starter = () => {
 						holder={"age group"}
 					/>
 				</Col>
-				<Col>
+				<Col md={4} xl={4}>
 					<DateFilter />
 				</Col>
 			</Row>
