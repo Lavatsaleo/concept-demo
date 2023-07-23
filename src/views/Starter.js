@@ -14,6 +14,7 @@ import ColumnChart7 from './../components/dashboard/Chart7';
 import Filter from "../components/dashboard/Filters";
 import DateFilter from "../components/dashboard/DateFilter";
 import Overview from "../components/dashboard/Blog";
+import Chart8 from "../components/dashboard/Chart8";
 
 const Starter = () => {
 	// State for current active Tab
@@ -26,7 +27,7 @@ const Starter = () => {
 	return (
 		<div>
 			<Row>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "facility A", label: "facility A" },
@@ -36,7 +37,7 @@ const Starter = () => {
 						holder={"facilities"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "county A", label: "county A" },
@@ -46,7 +47,7 @@ const Starter = () => {
 						holder={"counties"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "male", label: "male" },
@@ -55,7 +56,7 @@ const Starter = () => {
 						holder={"gender"}
 					/>
 				</Col>
-				<Col>
+				<Col md={2} xl={2}>
 					<Filter
 						data={[
 							{ value: "0-4 yrs", label: "0-4 yrs" },
@@ -66,7 +67,7 @@ const Starter = () => {
 						holder={"age group"}
 					/>
 				</Col>
-				<Col>
+				<Col md={4} xl={4}>
 					<DateFilter />
 				</Col>
 			</Row>
@@ -125,20 +126,34 @@ const Starter = () => {
 					{/***Top Cards***/}
 					<div className="my-3">
 						<Overview />
-						<h3 className="mb-0 font-weight-bold text-center">Screening</h3>
+						<h6 className="mb-3 font-weight-bold">Overall COVID-19 Positivity</h6>
 						<Row>
-							<Col sm="6" lg="4">
-								<TopCards subtitle="Screened" earning={114002} />
+							<Col sm="6" lg="3">
+								<PieChart2 h={"200px"} />
 							</Col>
-							<Col sm="6" lg="4">
-								<TopCards subtitle="Eligible" earning={20340} />
+							<Col sm="6" lg="3">
+								<TopCards subtitle="Total Screened" earning={114002} footer={100002} />
 							</Col>
-							<Col sm="6" lg="4">
-								<Gauge value1={20340} value2={114002} subtitle="Eligible" />
+							<Col sm="6" lg="3">
+								<TopCards subtitle="Eligible Participants" earning={20340} footer={19002} />
+							</Col>
+							<Col sm="6" lg="3">
+								<TopCards subtitle="Enrolled & Tested" earning={20340} footer={11902} />
+							</Col>
+							{/* <Col sm="6" lg="3">
+								<Gauge value1={20340} value2={114002} subtitle="Enrolled & Tested" />
+							</Col> */}
+						</Row>
+						<Row>
+							<Col>
+							<Chart8/>
+							</Col>
+							<Col>
+							<ColumnChart4/>
 							</Col>
 						</Row>
-						<h3 className="mb-0 font-weight-bold text-center">Enrollment</h3>
-						<Row>
+						{/* <h3 className="mb-0 font-weight-bold text-center">Enrollment</h3> */}
+						{/* <Row>
 							<Col sm="6" lg="4">
 								<TopCards subtitle="Eligible" earning={20340} />
 							</Col>
@@ -160,7 +175,7 @@ const Starter = () => {
 							<Col sm="6" lg="4">
 								<Gauge value1={9440} value2={15340} subtitle="Sampled" />
 							</Col>
-						</Row>
+						</Row> */}
 					</div>
 				</TabPane>
 				<TabPane className="my-3" tabId="2">

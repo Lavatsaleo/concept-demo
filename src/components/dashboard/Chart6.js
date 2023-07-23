@@ -33,10 +33,15 @@ const PieChart2 = () => {
 			},
 		],
 	};
+	const containerProps = {
+		style: {
+			height: "200px",
+		},
+	};
 
 	return (
 		<div>
-			<HighchartsReact highcharts={Highcharts} options={options} />
+			<HighchartsReact containerProps={containerProps} height={""} highcharts={Highcharts} options={options} />
 		</div>
 	);
 };
