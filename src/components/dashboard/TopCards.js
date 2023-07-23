@@ -10,6 +10,9 @@ const TopCards = (props) => {
 			<div class="data">
 				<p>{props.earning.toLocaleString()}</p>
 			</div>
+			<div class="data">
+				<pre>{props?.footer?.toLocaleString()} last month </pre>
+			</div>
 		</div>
   );
 };
