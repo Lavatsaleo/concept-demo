@@ -26,7 +26,7 @@ const Starter = () => {
 	};
 	return (
 		<div>
-			<Row>
+			{currentActiveTab === "1"?<></> :<Row>
 				<Col md={2} xl={2}>
 					<Filter
 						data={[
@@ -70,7 +70,7 @@ const Starter = () => {
 				<Col md={4} xl={4}>
 					<DateFilter />
 				</Col>
-			</Row>
+			</Row>}
 			<Nav tabs>
 				<NavItem>
 					<NavLink
@@ -93,7 +93,7 @@ const Starter = () => {
 							toggle("2");
 						}}
 					>
-						Participants
+						Screening
 					</NavLink>
 				</NavItem>
 				<NavItem>
