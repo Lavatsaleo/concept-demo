@@ -71,7 +71,9 @@ const Starter = () => {
 					<DateFilter />
 				</Col>
 			</Row>}
-			<Nav tabs>
+			<Row>
+							<Col xs="4" sm="2" md="2">
+							<Nav tabs vertical>
 				<NavItem>
 					<NavLink
 						className={classnames({
@@ -121,6 +123,8 @@ const Starter = () => {
 					</NavLink>
 				</NavItem>
 			</Nav>
+							</Col>
+							<Col xs="8" sm="10" md="10">
 			<TabContent activeTab={currentActiveTab}>
 				<TabPane tabId="1">
 					{/***Top Cards***/}
@@ -231,6 +235,8 @@ const Starter = () => {
 					</Row>
 				</TabPane>
 			</TabContent>
+						</Col>
+						</Row>
 		</div>
 	);
 };
