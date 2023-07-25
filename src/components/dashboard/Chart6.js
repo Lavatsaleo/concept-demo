@@ -2,7 +2,7 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
-const PieChart2 = () => {
+const PieChart2 = ({h}) => {
 	const options = {
 		chart: {
 			type: "pie",
@@ -35,7 +35,7 @@ const PieChart2 = () => {
 	};
 	const containerProps = {
 		style: {
-			height: "200px",
+			height: h?? "100%",
 		},
 	};
 
